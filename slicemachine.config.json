@@ -1,5 +1,0 @@
-{
-  "repositoryName": "rally",
-  "adapter": "@slicemachine/adapter-nuxt",
-  "libraries": ["./slices"]
-}
