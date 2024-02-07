@@ -13,5 +13,10 @@
     "nuxt": "^3.10.1",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5"
+  },
+  "devDependencies": {
+    "@nuxtjs/prismic": "^3.1.0",
+    "@slicemachine/adapter-nuxt": "^0.3.34",
+    "slice-machine-ui": "^1.23.1"
   }
 }
