@@ -2,5 +2,5 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/prismic'],
-  prismic: { endpoint: 'your_repository_id' },
+  prismic: { endpoint: 'https://rally.cdn.prismic.io/api/v2' },
 })
