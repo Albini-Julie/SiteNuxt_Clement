@@ -1,0 +1,17 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+// Importation des fonts Google Fonts
+@font-face {
+    font-family: "Montserrat";
+    src: url("/fonts/Montserrat-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
