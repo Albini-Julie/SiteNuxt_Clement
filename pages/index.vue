@@ -13,6 +13,7 @@ console.log(accueil);
 
 <style lang="scss" scoped>
 .test {
-  color: $primary-color;
+  color: $gray;
+  font-family: $secondary-font-family;
 }
 </style>
