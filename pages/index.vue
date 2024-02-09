@@ -1,6 +1,8 @@
 <template>
-  <h1 class="test">Bonjour</h1>
-  <h1>{{ accueil.data.accueil_titre[0].text }}</h1>
+  <div class="index">
+    <Header color="#ff0000" />
+  </div>
+  <!--<h1>{{ accueil.data.accueil_titre[0].text }}</h1>-->
 </template>
 
 <script setup>
@@ -12,8 +14,6 @@ console.log(accueil);
 </script>
 
 <style lang="scss" scoped>
-.test {
-  color: $gray;
-  font-family: $secondary-font-family;
+.index {
 }
 </style>
