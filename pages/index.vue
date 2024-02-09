@@ -1,9 +1,11 @@
 <template>
-  <div class="index">
+  <div class="index__cover">
     <!--Cover image-->
     <div
-      class="index__cover"
-      :style="{ backgroundImage: `url(${accueil.data.cover_image.url})` }"
+      class="index__back"
+      :style="{
+        backgroundImage: `url(${accueil.data.cover_image.url})`,
+      }"
       style="
         height: 100vh;
         width: 100%;
@@ -15,7 +17,9 @@
     <div class="index__content">
       <!--Cover titre-->
       <h1 class="cover__titre">{{ accueil.data.cover_titre[0].text }}</h1>
+      <!--Cover text-->
       <h2 class="cover__text">{{ accueil.data.cover_text[0].text }}</h2>
+      <!-- Cover button-->
       <div class="cover__button">
         <Button
           color="#BA0000"
@@ -23,6 +27,38 @@
           text="Mon dossier de sponsoring"
           :lien="accueil.data.sponsoring_dossier_lien.url"
         />
+      </div>
+    </div>
+    <!--Logo du site-->
+    <div class="index__blocLogo">
+      <IconsLogo width="230px" height="92px" color="#FFF" fontSize="40px" />
+    </div>
+    <!--Présentation-->
+    <div
+      style="
+        height: fit-content;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        padding: 50px 0px;
+      "
+      :style="{
+        backgroundImage: `url(${accueil.data.presentation_image.url})`,
+      }"
+      class="index__presentation"
+    >
+      <div class="presentation__content">
+        <h2 class="presentation__title">
+          {{ accueil.data.presentation_titre[0].text }}
+        </h2>
+        <p class="presentation__text">
+          {{ accueil.data.presentation_text1[0].text }}
+        </p>
+        <p class="presentation__text">
+          {{ accueil.data.presentation_text2[0].text }}
+        </p>
       </div>
     </div>
   </div>
@@ -40,9 +76,6 @@ console.log(accueil);
 .index {
   position: relative;
 
-  &__cover {
-  }
-
   &__content {
     position: absolute;
     top: 0;
@@ -50,6 +83,14 @@ console.log(accueil);
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Noir semi-transparent */
+  }
+
+  &__blocLogo {
+    background-color: $red;
+    padding: rem(100) rem(80);
+  }
+
+  &__presentation {
   }
 }
 
@@ -103,6 +144,48 @@ console.log(accueil);
 
   &__lien {
     text-decoration: none;
+  }
+}
+
+.presentation {
+  &__title {
+    font-family: $secondary-font-family;
+    color: #ffffff;
+    font-size: $desktopsoustitle-font-size;
+  }
+
+  &__text {
+    font-family: $primary-font-family;
+    color: #ffffff;
+    font-size: $mobilecontent-font-size;
+    margin: 0px;
+  }
+
+  &__content {
+    position: relative; /* Assurez-vous que la position est relative pour que les éléments absolus à l'intérieur soient positionnés correctement */
+    border: none;
+    border-left: solid 2px $red;
+    padding-top: rem(20);
+    padding-bottom: rem(20);
+    margin-left: rem(20);
+    z-index: 50;
+  }
+
+  &__content::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.5
+    ); /* Voile noir avec une opacité de 50% */
+
+    z-index: -1; /* Assurez-vous que le voile est en arrière-plan */
   }
 }
 </style>
