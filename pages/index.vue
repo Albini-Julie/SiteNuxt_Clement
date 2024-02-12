@@ -36,26 +36,19 @@
       <IconsLogo width="230px" height="92px" color="#FFF" fontSize="40px" />
     </div>
     <!--Présentation-->
-
+    <!--Image-->
     <div
-      style="
-        height: fit-content;
-
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        overflow: hidden;
-        padding: 80px 0px;
-      "
       :style="{
         backgroundImage: `url(${accueil.data.presentation_image.url})`,
       }"
       class="presentation__image"
     >
       <div class="presentation__content">
+        <!--Titre-->
         <h2 class="presentation__title">
           {{ accueil.data.presentation_titre[0].text }}
         </h2>
+        <!--Textes-->
         <p class="presentation__text">
           {{ accueil.data.presentation_text1[0].text }}
         </p>
@@ -63,6 +56,54 @@
           {{ accueil.data.presentation_text2[0].text }}
         </p>
       </div>
+    </div>
+  </div>
+  <!--Routage-->
+  <div class="index__routage">
+    <!--Le Pilote-->
+    <div
+      class="routage__box"
+      :style="{
+        backgroundImage: `url(${accueil.data.pilote_image.url})`,
+      }"
+    >
+      <Button
+        :text="accueil.data.pilote_buttontext[0].text"
+        color="#FFF"
+        colorText="#000"
+        route="/pilote"
+        fleche
+      ></Button>
+    </div>
+    <!--La voiture-->
+    <div
+      class="routage__box"
+      :style="{
+        backgroundImage: `url(${accueil.data.voiture_image.url})`,
+      }"
+    >
+      <Button
+        :text="accueil.data.voiture_buttontext[0].text"
+        color="#FFF"
+        colorText="#000"
+        route="/pilote"
+        fleche
+      ></Button>
+    </div>
+    <!--Les sponsors-->
+    <div
+      class="routage__box"
+      :style="{
+        backgroundImage: `url(${accueil.data.sponsors_image.url})`,
+      }"
+    >
+      <Button
+        :text="accueil.data.sponsors_buttontext[0].text"
+        color="#FFF"
+        colorText="#000"
+        route="/pilote"
+        fleche
+      ></Button>
     </div>
   </div>
 </template>
@@ -106,6 +147,14 @@ console.log(accueil);
   }
 
   &__presentation {
+    display: flex;
+    flex-direction: column;
+    @include large-up {
+      flex-direction: row;
+    }
+  }
+
+  &__routage {
     display: flex;
     flex-direction: column;
     @include large-up {
@@ -208,6 +257,12 @@ console.log(accueil);
   &__image {
     position: relative;
     width: 100%;
+    height: fit-content;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    padding: 80px 0px;
     @include x-large-up {
       width: 60%;
     }
@@ -222,6 +277,34 @@ console.log(accueil);
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
+  }
+}
+
+.routage {
+  &__box {
+    height: fit-content;
+    padding: rem(100) rem(20);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    filter: grayscale(100%);
+    @include medium-up {
+      background-position: center;
+      padding: rem(120) rem(5);
+    }
+    @include large-up {
+      padding: rem(150) rem(15);
+      width: 100%;
+    }
+    @include x-large-up {
+      padding: rem(200) rem(80);
+    }
+  }
+
+  &__box:hover {
+    filter: none;
   }
 }
 </style>
