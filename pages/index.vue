@@ -29,25 +29,28 @@
         />
       </div>
     </div>
+  </div>
+  <div class="index__presentation">
     <!--Logo du site-->
     <div class="index__blocLogo">
       <IconsLogo width="230px" height="92px" color="#FFF" fontSize="40px" />
     </div>
     <!--Présentation-->
+
     <div
       style="
         height: fit-content;
-        width: 100%;
+
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         overflow: hidden;
-        padding: 50px 0px;
+        padding: 80px 0px;
       "
       :style="{
         backgroundImage: `url(${accueil.data.presentation_image.url})`,
       }"
-      class="index__presentation"
+      class="presentation__image"
     >
       <div class="presentation__content">
         <h2 class="presentation__title">
@@ -87,10 +90,27 @@ console.log(accueil);
 
   &__blocLogo {
     background-color: $red;
-    padding: rem(100) rem(80);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: rem(80) rem(100);
+    @include large-up {
+      width: 60%;
+      padding: rem(0);
+    }
+    @include x-large-up {
+      width: 40%;
+      padding: rem(0);
+    }
   }
 
   &__presentation {
+    display: flex;
+    flex-direction: column;
+    @include large-up {
+      flex-direction: row;
+    }
   }
 }
 
@@ -152,6 +172,7 @@ console.log(accueil);
     font-family: $secondary-font-family;
     color: #ffffff;
     font-size: $desktopsoustitle-font-size;
+    margin: 0px;
   }
 
   &__text {
@@ -159,33 +180,48 @@ console.log(accueil);
     color: #ffffff;
     font-size: $mobilecontent-font-size;
     margin: 0px;
+    margin-top: rem(10);
+    @include x-large-up {
+      font-size: $desktopcontent-font-size;
+    }
   }
 
   &__content {
     position: relative; /* Assurez-vous que la position est relative pour que les éléments absolus à l'intérieur soient positionnés correctement */
     border: none;
     border-left: solid 2px $red;
-    padding-top: rem(20);
-    padding-bottom: rem(20);
     margin-left: rem(20);
+    padding-left: rem(20);
+    padding-right: rem(30);
+    padding-top: rem(10);
+    padding-bottom: rem(10);
     z-index: 50;
+    @include large-up {
+      width: 70%;
+      margin-left: rem(40);
+    }
+    @include x-large-up {
+      margin-left: rem(60);
+    }
   }
 
-  &__content::after {
+  &__image {
+    position: relative;
+    width: 100%;
+    @include x-large-up {
+      width: 60%;
+    }
+  }
+
+  &__image::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(
-      0,
-      0,
-      0,
-      0.5
-    ); /* Voile noir avec une opacité de 50% */
-
-    z-index: -1; /* Assurez-vous que le voile est en arrière-plan */
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
   }
 }
 </style>
