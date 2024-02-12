@@ -106,6 +106,66 @@
       ></Button>
     </div>
   </div>
+  <div class="index__cards">
+    <!--Devenir sponsors-->
+    <div class="index__sponsoring">
+      <h2 class="sponsoring__title">
+        {{ accueil.data.sponsoring_titre[0].text }}
+      </h2>
+      <div class="sponsoring__content">
+        <p class="sponsoring__catchline">
+          {{ accueil.data.sponsoring_catchline[0].text }}
+        </p>
+        <Button
+          color="#444444"
+          colorText="#FFFFFF"
+          text="Mon dossier de sponsoring"
+          :lien="accueil.data.sponsoring_dossier_lien.url"
+        />
+      </div>
+    </div>
+    <!--Devenir contact-->
+    <div class="index__contact">
+      <h2 class="sponsoring__title --contact">
+        {{ accueil.data.contact_titre[0].text }}
+      </h2>
+      <div class="contact__content">
+        <a
+          class="contact__lien"
+          :href="accueil.data.contact_instagram_lien.url"
+        >
+          <div class="contact__rs">
+            <IconsInstagram />
+            <p class="contact__text">
+              {{ accueil.data.contact_instagram[0].text }}
+            </p>
+          </div>
+        </a>
+        <a class="contact__lien" :href="accueil.data.contact_tiktok_lien.url">
+          <div class="contact__rs">
+            <IconsTiktok />
+            <p class="contact__text">
+              {{ accueil.data.contact_tiktok[0].text }}
+            </p>
+          </div>
+        </a>
+        <p class="contact__text">
+          {{ accueil.data.contact_telephone[0].text }}
+        </p>
+        <p class="contact__text">
+          {{ accueil.data.contact_mail[0].text }}
+        </p>
+        <div class="contact__button">
+          <Button
+            color="#BA0000"
+            colorText="#FFFFFF"
+            text="Me contacter"
+            route="/contact"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -155,6 +215,29 @@ console.log(accueil);
   }
 
   &__routage {
+    display: flex;
+    flex-direction: column;
+    @include large-up {
+      flex-direction: row;
+    }
+  }
+
+  &__sponsoring {
+    background-color: $red;
+    padding: rem(80) rem(40);
+    @include large-up {
+      width: 100%;
+    }
+  }
+
+  &__contact {
+    background-color: $gray;
+    padding: rem(80) rem(40);
+    @include large-up {
+      width: 100%;
+    }
+  }
+  &__cards {
     display: flex;
     flex-direction: column;
     @include large-up {
@@ -305,6 +388,64 @@ console.log(accueil);
 
   &__box:hover {
     filter: none;
+  }
+}
+
+.sponsoring {
+  &__title {
+    font-family: $secondary-font-family;
+    color: $white;
+    font-size: rem(50);
+    margin: 0px;
+    text-align: center;
+
+    &.--contact {
+      margin-bottom: rem(50);
+    }
+  }
+  &__catchline {
+    font-family: $primary-font-family;
+    color: $white;
+    font-size: $mobilesoustitle-font-size;
+    margin-top: rem(50);
+    margin-bottom: rem(30);
+  }
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: rem(20);
+  }
+}
+.contact {
+  &__text {
+    font-family: $primary-font-family;
+    color: $white;
+    font-size: $mobilesoustitle-font-size;
+    margin: rem(0);
+  }
+  &__button {
+    display: flex;
+    justify-content: center;
+    margin-top: rem(30);
+  }
+  &__rs {
+    display: flex;
+    gap: rem(10);
+    align-items: center;
+    justify-content: center;
+  }
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: rem(20);
+  }
+  &__lien {
+    text-transform: none;
+    text-decoration: none;
   }
 }
 </style>
