@@ -21,7 +21,7 @@
       <NuxtLink class="window__lien" to="/contact">
         <p class="window__text">Contact</p>
       </NuxtLink>
-      <NuxtLink class="window__lien" to="/legal">
+      <NuxtLink class="window__lien" to="/mentionslegales">
         <p class="window__text">Légal</p>
       </NuxtLink>
     </div>
