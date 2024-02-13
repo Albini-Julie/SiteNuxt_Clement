@@ -4,10 +4,10 @@
       <div class="footer__logo --desktop">
         <NuxtLink class="footer__lien --lien" to="/">
           <IconsLogo
-            width="230px"
-            height="92px"
+            width="170px"
+            height="62px"
             :color="colorText"
-            fontSize="40px"
+            fontSize="30px"
           />
         </NuxtLink>
       </div>
