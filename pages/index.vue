@@ -124,7 +124,7 @@
         />
       </div>
     </div>
-    <!--Devenir contact-->
+    <!--contact-->
     <div class="index__contact">
       <h2 class="sponsoring__title --contact">
         {{ accueil.data.contact_titre[0].text }}
@@ -166,6 +166,8 @@
       </div>
     </div>
   </div>
+  <!--Footer-->
+  <Footer color="#FFFFFF" colorText="#000000" />
 </template>
 
 <script setup>
