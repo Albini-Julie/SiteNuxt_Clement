@@ -68,6 +68,7 @@
   justify-content: space-between;
   align-items: center;
   z-index: 1;
+  background-color: v-bind(backColor);
   padding: rem(20);
   @include large-up {
     padding: rem(20) rem(50);
@@ -172,6 +173,7 @@
 import { ref } from "vue";
 defineProps({
   color: String,
+  backColor: String,
 });
 
 let open = ref(false);
