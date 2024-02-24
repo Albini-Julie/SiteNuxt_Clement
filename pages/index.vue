@@ -86,7 +86,7 @@
         :text="accueil.data.voiture_buttontext[0].text"
         color="#FFF"
         colorText="#000"
-        route="/pilote"
+        route="/voiture"
         fleche
       ></Button>
     </div>
@@ -101,7 +101,7 @@
         :text="accueil.data.sponsors_buttontext[0].text"
         color="#FFF"
         colorText="#000"
-        route="/pilote"
+        route="/sponsors"
         fleche
       ></Button>
     </div>
