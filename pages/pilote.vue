@@ -59,23 +59,12 @@
             <p class="projets__text">{{ i.projet_texte[0].text }}</p>
           </div>
         </div>
-        <!--Partie sponsoring-->
-        <div class="projets__sponsoring">
-          <h2 class="sponsoring__title">
-            {{ pilote.data.sponsoring_titre[0].text }}
-          </h2>
-          <p class="sponsoring__text">
-            {{ pilote.data.sponsoring_texte[0].text }}
-          </p>
-          <div class="sponsoring__button">
-            <Button
-              color="#FFFFFF"
-              colorText="#000000"
-              :text="pilote.data.sponsoring_bouton[0].text"
-              :lien="pilote.data.sponsoring_lien_dossier.url"
-            />
-          </div>
-        </div>
+        <Sponsoring
+          :title="pilote.data.sponsoring_titre[0].text"
+          :text="pilote.data.sponsoring_texte[0].text"
+          :button="pilote.data.sponsoring_bouton[0].text"
+          :lien="pilote.data.sponsoring_lien_dossier.url"
+        />
       </div>
     </div>
   </div>
@@ -325,62 +314,6 @@
     display: flex;
     gap: rem(20);
     align-items: center;
-  }
-  &__sponsoring {
-    position: relative;
-    height: fit-content;
-    overflow: hidden;
-    margin-top: rem(40);
-    text-align: center;
-    border: solid 2px $white;
-    padding-top: rem(50);
-    padding-bottom: rem(50);
-    @include large-up {
-      width: 50%;
-    }
-    @include x-large-up {
-      width: 30%;
-    }
-  }
-  &__sponsoring::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-  }
-}
-
-.sponsoring {
-  &__title {
-    color: $white;
-    position: relative; /* Assurez-vous que la position est relative pour que les éléments absolus à l'intérieur soient positionnés correctement */
-    z-index: 50;
-    font-family: $primary-font-family;
-    font-weight: 200;
-    padding-left: rem(10);
-    padding-right: rem(10);
-    margin: 0px;
-  }
-  &__text {
-    color: $white;
-    position: relative; /* Assurez-vous que la position est relative pour que les éléments absolus à l'intérieur soient positionnés correctement */
-    z-index: 50;
-    font-family: $primary-font-family;
-    font-size: $mobilecontent-font-size;
-    padding-left: rem(10);
-    padding-right: rem(10);
-    margin-top: rem(20);
-  }
-  &__button {
-    position: relative;
-    z-index: 50;
-    display: flex;
-    justify-content: center;
-    margin-top: rem(40);
   }
 }
 </style>
