@@ -22,7 +22,6 @@
           {{ pilote.data.presentation_texte[0].text }}
         </p>
       </div>
-      0
     </div>
   </div>
 </template>
@@ -35,6 +34,15 @@
     width: fit-content;
     padding-top: rem(80);
     padding-bottom: rem(250);
+    @include large-up {
+      display: flex;
+      justify-content: space-evenly;
+      gap: 20px;
+      align-items: center;
+    }
+    @include x-large-up {
+      gap: 0px;
+    }
   }
 }
 
@@ -44,25 +52,65 @@
     flex-direction: column;
     gap: rem(20);
     align-items: center;
+    @include medium-up {
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
   }
   &__image {
     width: 60%;
+    @include medium-up {
+      width: 230px;
+      height: 300px;
+    }
+    @include large-up {
+      width: 193px;
+      height: 270px;
+    }
+    @include x-large-up {
+      width: 303px;
+      height: 400px;
+    }
   }
   &__title {
     font-family: $secondary-font-family;
     font-size: rem(25);
     color: $white;
     text-transform: uppercase;
+    margin: 0px;
+    @include large-up {
+      font-size: rem(25);
+    }
+    @include x-large-up {
+      font-size: rem(35);
+    }
   }
   &__content {
     margin-top: rem(40);
     padding-left: rem(30);
     padding-right: rem(30);
+    @include medium-up {
+      width: 80%;
+      margin-top: rem(60);
+    }
+    @include large-up {
+      margin: 0px;
+      width: 40%;
+    }
+    @include x-large-up {
+      width: 30%;
+    }
   }
   &__text {
     font-family: $primary-font-family;
     font-size: $mobilecontent-font-size;
     color: $white;
+    @include large-up {
+      font-size: rem(14);
+    }
+    @include x-large-up {
+      font-size: rem(16);
+    }
   }
 }
 </style>
