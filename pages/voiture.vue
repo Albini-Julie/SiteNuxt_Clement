@@ -8,6 +8,7 @@
       <input type="radio" name="slider" id="item-2" />
       <input type="radio" name="slider" id="item-3" />
       <div class="cards">
+        <!--Items-->
         <label
           v-for="(i, index) in voiture.data.voiture_caroussel"
           class="card"
@@ -17,17 +18,57 @@
           <img :src="i.caroussel_image.url" alt="song" />
         </label>
       </div>
+      <!--Infos voiture-->
+      <div class="grid-container">
+        <div
+          class="voiture__descri"
+          v-for="(i, index) in voiture.data.voiture_caracteristiques"
+        >
+          <cardVoiture
+            v-if="index % 2 == 0"
+            backColor="#BA0000"
+            color="#FFFFFF"
+            :titre="i.caracteristique_titre[0].text"
+            :text="i.caracteristique_texte[0].text"
+            icon="rubis"
+          />
+          <cardVoiture
+            v-if="index % 2 == 1"
+            backColor="#FFFFFF"
+            color="#BA0000"
+            :titre="i.caracteristique_titre[0].text"
+            :text="i.caracteristique_texte[0].text"
+            icon="rubis"
+            bord=""
+          />
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+.grid-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  @include medium-up {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+}
 .voiture {
   &__caroussel {
     background-color: $black;
     height: 80vh;
     padding-top: rem(80);
     margin-top: -1px;
+  }
+  &__descri {
+    margin-top: rem(50);
+    display: flex;
+    justify-content: center;
   }
 }
 
