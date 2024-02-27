@@ -19,28 +19,30 @@
         </label>
       </div>
       <!--Infos voiture-->
-      <div class="grid-container">
-        <div
-          class="voiture__descri"
-          v-for="(i, index) in voiture.data.voiture_caracteristiques"
-        >
-          <cardVoiture
-            v-if="index % 2 == 0"
-            backColor="#BA0000"
-            color="#FFFFFF"
-            :titre="i.caracteristique_titre[0].text"
-            :text="i.caracteristique_texte[0].text"
-            icon="rubis"
-          />
-          <cardVoiture
-            v-if="index % 2 == 1"
-            backColor="#FFFFFF"
-            color="#BA0000"
-            :titre="i.caracteristique_titre[0].text"
-            :text="i.caracteristique_texte[0].text"
-            icon="rubis"
-            bord=""
-          />
+      <div class="voiture__descri">
+        <div class="grid-container">
+          <div
+            class="voiture__grille"
+            v-for="(i, index) in voiture.data.voiture_caracteristiques"
+          >
+            <cardVoiture
+              v-if="index % 2 == 0"
+              backColor="#BA0000"
+              color="#FFFFFF"
+              :titre="i.caracteristique_titre[0].text"
+              :text="i.caracteristique_texte[0].text"
+              icon="rubis"
+            />
+            <cardVoiture
+              v-if="index % 2 == 1"
+              backColor="#FFFFFF"
+              color="#BA0000"
+              :titre="i.caracteristique_titre[0].text"
+              :text="i.caracteristique_texte[0].text"
+              icon="rubis"
+              bord=""
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -49,13 +51,19 @@
 
 <style lang="scss" scoped>
 .grid-container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+  gap: 10px;
   @include medium-up {
-    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
+    width: 80%;
+  }
+  @include large-up {
+    width: 65%;
+  }
+  @include x-large-up {
+    width: 45%;
   }
 }
 .voiture {
@@ -63,12 +71,25 @@
     background-color: $black;
     height: 80vh;
     padding-top: rem(80);
+    padding-bottom: rem(50);
     margin-top: -1px;
   }
-  &__descri {
+  &__grille {
     margin-top: rem(50);
     display: flex;
     justify-content: center;
+  }
+  &__descri {
+    @include medium-up {
+      display: flex;
+      justify-content: center;
+      margin-top: rem(50);
+      margin-bottom: rem(50);
+      @include large-up {
+        margin-top: rem(150);
+        margin-bottom: rem(150);
+      }
+    }
   }
 }
 
