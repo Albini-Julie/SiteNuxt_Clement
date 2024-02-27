@@ -45,6 +45,30 @@
           </div>
         </div>
       </div>
+      <!--Choix voiture-->
+      <div class="voiture__choix">
+        <div class="choix__textes">
+          <h2 class="choix__title">{{ voiture.data.choix_titre[0].text }}</h2>
+          <div class="choix__content">
+            <p>{{ voiture.data.choix_texte1[0].text }}</p>
+            <p>{{ voiture.data.choix_texte2[0].text }}</p>
+          </div>
+        </div>
+        <div
+          class="choix__image"
+          :style="{
+            backgroundImage: `url(${voiture.data.sponsoring_image.url})`,
+          }"
+        >
+          <Button
+            class="choix__bouton"
+            color="#BA0000"
+            colorText="#FFFFFF"
+            :text="voiture.data.sponsoring_bouton[0].text"
+            :lien="voiture.data.sponsoring_lien_dossier.url"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -80,15 +104,76 @@
     justify-content: center;
   }
   &__descri {
+    margin-top: rem(100);
+    margin-bottom: rem(100);
     @include medium-up {
       display: flex;
       justify-content: center;
-      margin-top: rem(50);
-      margin-bottom: rem(50);
       @include large-up {
         margin-top: rem(150);
         margin-bottom: rem(150);
       }
+    }
+  }
+  &__choix {
+    @include large-up {
+      display: flex;
+    }
+  }
+}
+
+.choix {
+  &__title {
+    color: $white;
+    width: 80%;
+    padding-left: rem(30);
+  }
+  &__content {
+    border-left: solid 2px $red;
+    color: $white;
+    font-family: $primary-font-family;
+    font-size: $mobilecontent-font-size;
+    margin-left: rem(20);
+    padding-left: rem(10);
+    padding-right: rem(20);
+    @include medium-up {
+      width: 80%;
+    }
+    @include large-up {
+      width: fit-content;
+    }
+  }
+  &__image {
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    @include large-up {
+      width: 50%;
+    }
+    @include x-large-up {
+      width: 60%;
+    }
+  }
+
+  &__textes {
+    padding-top: rem(100);
+    padding-bottom: rem(100);
+    background-color: $black;
+    font-size: rem(30);
+    font-family: $secondary-font-family;
+    padding-top: rem(60);
+    padding-bottom: rem(60);
+    @include large-up {
+      width: 50%;
+    }
+    @include x-large-up {
+      width: 40%;
     }
   }
 }
