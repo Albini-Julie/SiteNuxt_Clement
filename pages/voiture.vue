@@ -69,6 +69,7 @@
           />
         </div>
       </div>
+      <Footer class="voiture__footer" color="#FFFFFF" colorText="#000000" />
     </div>
   </div>
 </template>
@@ -120,6 +121,9 @@
       display: flex;
     }
   }
+  &__footer {
+    margin-top: rem(50);
+  }
 }
 
 .choix {
@@ -127,6 +131,16 @@
     color: $white;
     width: 80%;
     padding-left: rem(30);
+    @include medium-up {
+      padding-left: rem(50);
+    }
+    @include large-up {
+      padding-left: rem(40);
+    }
+    @include x-large-up {
+      padding-left: rem(80);
+      margin-top: rem(150);
+    }
   }
   &__content {
     border-left: solid 2px $red;
@@ -138,13 +152,22 @@
     padding-right: rem(20);
     @include medium-up {
       width: 80%;
+      margin-left: rem(50);
     }
     @include large-up {
+      margin-left: rem(40);
+      margin-right: rem(40);
       width: fit-content;
+    }
+    @include x-large-up {
+      margin-left: rem(80);
+      margin-right: rem(60);
+      width: 70%;
+      margin-bottom: rem(150);
+      font-size: $desktopcontent-font-size;
     }
   }
   &__image {
-    height: 80vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -152,12 +175,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    @include only-small {
+      height: 50vh;
+    }
+    @include medium-up {
+      padding-top: rem(100);
+      padding-bottom: rem(100);
+    }
     @include large-up {
+      padding-top: rem(0);
+      padding-bottom: rem(0);
       width: 50%;
     }
     @include x-large-up {
-      width: 60%;
+      padding-top: rem(0);
+      padding-bottom: rem(0);
+      width: 50%;
     }
   }
 
@@ -173,7 +206,8 @@
       width: 50%;
     }
     @include x-large-up {
-      width: 40%;
+      width: 50%;
+      font-size: rem(35);
     }
   }
 }
