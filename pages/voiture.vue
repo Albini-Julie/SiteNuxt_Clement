@@ -25,6 +25,7 @@
             class="voiture__grille"
             v-for="(i, index) in voiture.data.voiture_caracteristiques"
           >
+            <!--Card fond rouge - blanc-->
             <cardVoiture
               v-if="index % 2 == 0"
               backColor="#BA0000"
@@ -33,6 +34,7 @@
               :text="i.caracteristique_texte[0].text"
               icon="rubis"
             />
+            <!--Card fond blanc - rouge-->
             <cardVoiture
               v-if="index % 2 == 1"
               backColor="#FFFFFF"
