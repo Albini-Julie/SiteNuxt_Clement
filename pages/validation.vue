@@ -5,6 +5,10 @@
     <div class="contact__texts">
       <h2 class="contact__title">{{ contact.data.contact_titre[0].text }}</h2>
       <p class="contact__text">{{ contact.data.contact_texte[0].text }}</p>
+      <div class="contact__validation">
+        <IconsCheck />
+        <p>Votre message m'a bien été envoyé</p>
+      </div>
     </div>
     <!--Formulaire de contact-->
     <div class="contact__blocFormulaire">
@@ -204,6 +208,26 @@
   }
   &__footer {
     margin-top: rem(-1);
+  }
+  &__validation {
+    background-color: #00993d;
+    color: $white;
+    padding: rem(20) rem(70);
+    border-radius: 10px;
+    font-family: $primary-font-family;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    font-size: rem(14);
+    @include medium-up {
+      font-size: rem(16);
+    }
+    @include large-up {
+      font-size: rem(18);
+    }
+    @include x-large-up {
+      font-size: rem(20);
+    }
   }
 }
 </style>
