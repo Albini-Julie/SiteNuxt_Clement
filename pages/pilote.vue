@@ -306,6 +306,9 @@
     color: $white;
     font-family: $primary-font-family;
     font-size: $mobilecontent-font-size;
+    @include medium-up {
+      font-size: rem(16);
+    }
     @include x-large-up {
       font-size: $desktopcontent-font-size;
     }
