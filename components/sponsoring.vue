@@ -34,6 +34,16 @@
     padding-left: rem(10);
     padding-right: rem(10);
     margin: 0px;
+    @include large-up {
+      font-size: rem(25);
+      padding-left: rem(15);
+      padding-right: rem(15);
+    }
+    @include x-large-up {
+      font-size: rem(30);
+      padding-left: rem(20);
+      padding-right: rem(20);
+    }
   }
   &__text {
     color: $white;
@@ -44,6 +54,16 @@
     padding-left: rem(10);
     padding-right: rem(10);
     margin-top: rem(20);
+    @include large-up {
+      font-size: rem(16);
+      padding-left: rem(15);
+      padding-right: rem(15);
+    }
+    @include x-large-up {
+      font-size: $desktopcontent-font-size;
+      padding-left: rem(20);
+      padding-right: rem(20);
+    }
   }
   &__button {
     position: relative;
