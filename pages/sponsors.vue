@@ -7,7 +7,7 @@
       v-for="sponsor in sponsors.data.sponsors_logos"
       :key="sponsor.id"
     >
-      <img :src="sponsor.sponsors_logo.url" />
+      <img :src="sponsor.sponsors_logo.url" :alt="sponsor.sponsors_logo.alt" />
     </div>
   </div>
   <!--Sponsors-->

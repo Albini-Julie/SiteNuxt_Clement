@@ -134,6 +134,7 @@
     color: $white;
     padding: rem(10);
     font-size: rem(14);
+    font-family: $primary-font-family;
     @include medium-up {
       font-size: rem(15);
     }
@@ -184,7 +185,7 @@
     width: fit-content;
     padding: rem(10) rem(60);
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     color: $white;
     font-weight: 500;
     font-family: $primary-font-family;
@@ -205,7 +206,7 @@
   }
   &__blocButton {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     width: 100%;
     margin-bottom: rem(50);
   }

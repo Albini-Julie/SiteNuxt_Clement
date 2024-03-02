@@ -7,12 +7,12 @@
         <img
           class="presentation__image"
           :src="pilote.data.presentation_image2.url"
-          alt="image du pilote Clément Albini"
+          :alt="pilote.data.presentation_image2.alt"
         />
         <img
           class="presentation__image"
           :src="pilote.data.presentation_image1.url"
-          alt="image du pilote Clément Albini"
+          :alt="pilote.data.presentation_image1.alt"
         />
       </div>
       <div class="presentation__content">
@@ -27,7 +27,11 @@
     <!--Qualités-->
     <div class="pilote__qualites">
       <div class="qualites__blocImage">
-        <img class="qualites__image" :src="pilote.data.qualite_image.url" />
+        <img
+          class="qualites__image"
+          :src="pilote.data.qualite_image.url"
+          :alt="pilote.data.qualite_image.alt"
+        />
       </div>
       <div class="qualites__blocContent">
         <div
