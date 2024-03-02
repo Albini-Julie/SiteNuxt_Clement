@@ -1,10 +1,12 @@
 <template>
   <div class="contact">
+    <!--Header-->
     <Header backColor="#BA0000" color="#FFFFFF" />
     <!--Textes-->
     <div class="contact__texts">
       <h2 class="contact__title">{{ contact.data.contact_titre[0].text }}</h2>
       <p class="contact__text">{{ contact.data.contact_texte[0].text }}</p>
+      <!--Validation-->
       <div class="contact__validation">
         <IconsCheck />
         <p>Votre message m'a bien été envoyé</p>
@@ -17,11 +19,13 @@
         method="post"
         class="contact__formulaire"
       >
+        <!--Clé pour l'envoie du message-->
         <input
           type="hidden"
           name="access_key"
           value="1e8caabc-07df-458a-8ee8-8c9459f7aa9f"
         />
+        <!--Nom-->
         <p class="contact__input-text">Nom</p>
         <input
           class="contact__input"
@@ -31,6 +35,7 @@
           placeholder="Votre nom"
           required
         />
+        <!--Prénom-->
         <p class="contact__input-text">Prénom</p>
         <input
           class="contact__input"
@@ -40,6 +45,7 @@
           required
           name="prénom"
         />
+        <!--Adresse mail-->
         <p class="contact__input-text">Adresse mail</p>
         <input
           class="contact__input"
@@ -49,6 +55,7 @@
           required
           name="adresse_mail"
         />
+        <!--Message-->
         <p class="contact__input-text">Message</p>
         <textarea
           class="contact__input --textarea"
@@ -56,11 +63,13 @@
           placeholder="Votre message"
           name="message"
         />
+        <!--Redirection-->
         <input
           type="hidden"
           name="redirect"
           value="https://juliealbini.albini.fr/validation"
         />
+        <!--Bouton d'envoie-->
         <div class="contact__blocButton">
           <button class="contact__button" type="submit" @click="email">
             Envoyer
@@ -69,6 +78,7 @@
       </form>
     </div>
   </div>
+  <!--Footer-->
   <Footer class="contact__footer" color="#BA0000" colorText="#FFFFFF" />
 </template>
 
@@ -244,12 +254,14 @@
 </style>
 
 <script setup>
+// Appel du client usePrismic pour avoir accès aux données de la single page contact
 const { client } = usePrismic();
 const { data: contact, error } = await useAsyncData("contact", () =>
   client.getSingle("contact")
 );
 console.log(contact);
 
+// Mise en place du SEO
 useSeoMeta({
   title: "calb-motorsport validation",
   ogTitle: "calb-motorsport validation",

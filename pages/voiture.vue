@@ -1,8 +1,8 @@
 <template>
+  <!--Header-->
   <Header backColor="#000000" color="#FFFFFF" />
   <div class="voiture">
     <!--Caroussel-->
-    <!--Items du caroussel-->
     <div class="voiture__caroussel">
       <input type="radio" name="slider" id="item-1" checked />
       <input type="radio" name="slider" id="item-2" />
@@ -50,18 +50,22 @@
       <!--Choix voiture-->
       <div class="voiture__choix">
         <div class="choix__textes">
+          <!--Titre-->
           <h2 class="choix__title">{{ voiture.data.choix_titre[0].text }}</h2>
+          <!--Contenus textes-->
           <div class="choix__content">
             <p>{{ voiture.data.choix_texte1[0].text }}</p>
             <p>{{ voiture.data.choix_texte2[0].text }}</p>
           </div>
         </div>
+        <!--Sponsoring-->
         <div
           class="choix__image"
           :style="{
             backgroundImage: `url(${voiture.data.sponsoring_image.url})`,
           }"
         >
+          <!--Bouton-->
           <Button
             class="choix__bouton"
             color="#BA0000"
@@ -71,6 +75,7 @@
           />
         </div>
       </div>
+      <!--Footer-->
       <Footer class="voiture__footer" color="#FFFFFF" colorText="#000000" />
     </div>
   </div>
@@ -284,12 +289,14 @@ img {
 </style>
 
 <script setup>
+// Appel du client usePrismic pour avoir accès aux données de la single page voiture
 const { client } = usePrismic();
 const { data: voiture, error } = await useAsyncData("voiture", () =>
   client.getSingle("voiture")
 );
 console.log(voiture);
 
+// Mise en place du SEO
 useSeoMeta({
   title: "calb-motorsport voiture",
   ogTitle: "calb-motorsport voiture",

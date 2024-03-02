@@ -1,20 +1,26 @@
 <template>
   <div class="legales">
+    <!--Header-->
     <Header color="#000000" />
     <div class="legales__content">
+      <!--Titre-->
       <div class="legales__title">
         <h1>{{ legales.data.legales_page_titre[0].text }}</h1>
       </div>
+      <!--Contenus textuels-->
       <div v-for="(i, index) in legales.data.legales_content">
+        <!--Titre-->
         <h2 class="legales__soustitle">
           {{ i.legales_titre[0].text }}
         </h2>
+        <!--Texte-->
         <p class="legales__text">
           {{ i.legales_texte[0].text }}
         </p>
       </div>
     </div>
   </div>
+  <!--Footer-->
   <Footer class="legales__footer" color="#FFFFFF" colorText="#000000" />
 </template>
 
@@ -75,12 +81,14 @@
 </style>
 
 <script setup>
+// Appel du client usePrismic pour avoir accès aux données de la single page mentions_le
 const { client } = usePrismic();
 const { data: legales, error } = await useAsyncData("legales", () =>
   client.getSingle("mentions_le")
 );
 console.log(legales);
 
+// Mise en place du SEO
 useSeoMeta({
   title: "calb-motorsport mentions légales",
   ogTitle: "calb-motorsport mentions légales",

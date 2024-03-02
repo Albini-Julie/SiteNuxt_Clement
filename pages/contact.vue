@@ -13,11 +13,13 @@
         method="post"
         class="contact__formulaire"
       >
+        <!--Clé de pour l'envoie-->
         <input
           type="hidden"
           name="access_key"
           value="1e8caabc-07df-458a-8ee8-8c9459f7aa9f"
         />
+        <!--Nom-->
         <p class="contact__input-text">Nom</p>
         <input
           class="contact__input"
@@ -27,6 +29,7 @@
           placeholder="Votre nom"
           required
         />
+        <!--Prénom-->
         <p class="contact__input-text">Prénom</p>
         <input
           class="contact__input"
@@ -36,6 +39,7 @@
           required
           name="prénom"
         />
+        <!--Adresse mail-->
         <p class="contact__input-text">Adresse mail</p>
         <input
           class="contact__input"
@@ -45,6 +49,7 @@
           required
           name="adresse_mail"
         />
+        <!--Message-->
         <p class="contact__input-text">Message</p>
         <textarea
           class="contact__input --textarea"
@@ -52,11 +57,13 @@
           placeholder="Votre message"
           name="message"
         />
+        <!--Redirection-->
         <input
           type="hidden"
           name="redirect"
           value="https://carb-motorsport.albini.fr/validation"
         />
+        <!--Bouton d'envoie-->
         <div class="contact__blocButton">
           <button class="contact__button" type="submit" @click="email">
             Envoyer
@@ -65,6 +72,7 @@
       </form>
     </div>
   </div>
+  <!--Footer-->
   <Footer class="contact__footer" color="#BA0000" colorText="#FFFFFF" />
 </template>
 
@@ -217,12 +225,14 @@
 </style>
 
 <script setup>
+// Appel du client usePrismic pour importer les données de la single page contact
 const { client } = usePrismic();
 const { data: contact, error } = await useAsyncData("contact", () =>
   client.getSingle("contact")
 );
 console.log(contact);
 
+// Mise en place du SEO
 useSeoMeta({
   title: "calb-motorsport contact",
   ogTitle: "calb-motorsport contact",
