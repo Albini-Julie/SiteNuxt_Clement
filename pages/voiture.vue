@@ -15,7 +15,7 @@
           :for="'item-' + (index + 1)"
           :id="'song-' + (index + 1)"
         >
-          <img :src="i.caroussel_image.url" alt="song" />
+          <img :src="i.caroussel_image.url" :alt="i.caroussel_image.alt" />
         </label>
       </div>
       <!--Infos voiture-->
