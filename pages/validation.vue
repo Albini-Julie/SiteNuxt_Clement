@@ -113,7 +113,7 @@
     }
     @include x-large-up {
       font-size: rem(22);
-      margin-bottom: rem(50);
+      margin-bottom: rem(20);
     }
   }
   &__formulaire {
@@ -137,6 +137,14 @@
     height: rem(25);
     color: $white;
     padding: rem(10);
+    font-size: rem(14);
+    font-family: $primary-font-family;
+    @include medium-up {
+      font-size: rem(15);
+    }
+    @include medium-up {
+      font-size: rem(17);
+    }
     &::placeholder {
       color: #fff; // Couleur de votre choix
       opacity: 60%;
@@ -181,7 +189,7 @@
     width: fit-content;
     padding: rem(10) rem(60);
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     color: $white;
     font-weight: 500;
     font-family: $primary-font-family;
@@ -202,7 +210,7 @@
   }
   &__blocButton {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     width: 100%;
     margin-bottom: rem(50);
   }
@@ -212,21 +220,24 @@
   &__validation {
     background-color: #00993d;
     color: $white;
-    padding: rem(20) rem(70);
+    padding: rem(10) rem(15);
     border-radius: 10px;
     font-family: $primary-font-family;
     display: flex;
-    gap: 30px;
+    gap: 10px;
     align-items: center;
     font-size: rem(14);
+    margin-top: rem(20);
     @include medium-up {
       font-size: rem(16);
     }
     @include large-up {
       font-size: rem(18);
+      padding: rem(15) rem(20);
     }
     @include x-large-up {
-      font-size: rem(20);
+      font-size: rem(18);
+      padding: rem(15) rem(50);
     }
   }
 }

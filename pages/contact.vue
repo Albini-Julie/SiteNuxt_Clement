@@ -55,7 +55,7 @@
         <input
           type="hidden"
           name="redirect"
-          value="https://juliealbini.albini.fr/validation"
+          value="https://carb-motorsport.albini.fr/validation"
         />
         <div class="contact__blocButton">
           <button class="contact__button" type="submit" @click="email">
@@ -133,6 +133,13 @@
     height: rem(25);
     color: $white;
     padding: rem(10);
+    font-size: rem(14);
+    @include medium-up {
+      font-size: rem(15);
+    }
+    @include medium-up {
+      font-size: rem(17);
+    }
     &::placeholder {
       color: #fff; // Couleur de votre choix
       opacity: 60%;
