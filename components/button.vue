@@ -46,6 +46,13 @@
 </style>
 
 <script setup>
+// Création de props permettant de rendre le bouton paramétrable :
+// color permet de modifier la couleur de fond du bouton
+// coloText permet de modifier la couleur de texte du bouton
+// text permet d'entrer le texte du bouton
+// route permet d'entrer la route de redirection au clic sur le bouton
+// fleche permet d'avoir ou non un icon fleche dans le bouton
+// lien permet d'entrer la chemin de téléchargement du fichier au clic sur le bouton
 defineProps({
   color: String,
   colorText: String,

@@ -171,12 +171,14 @@
 </template>
 
 <script setup>
+// Appel du client usePrismic pour avoir accès aux données de la single page pageaccueil
 const { client } = usePrismic();
 const { data: accueil, error } = await useAsyncData("accueil", () =>
   client.getSingle("pageaccueil")
 );
 console.log(accueil);
 
+// Mise en place du SEO
 useSeoMeta({
   title: "calb-motorsport",
   ogTitle: "calb-motorsport",

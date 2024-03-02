@@ -1,4 +1,5 @@
 <template>
+  <!--Logo-->
   <svg
     viewBox="0 0 160 54"
     fill="none"
@@ -23,10 +24,12 @@
       :fill="color"
     ></path>
   </svg>
+  <!--Texte-->
   <p class="text">CA</p>
 </template>
 
 <style lang="scss" scoped>
+// Modifier le texte du logo
 .text {
   width: v-bind(width);
   font-size: v-bind(fontSize);
@@ -38,6 +41,7 @@
   margin-top: 10px;
 }
 
+// Modifier la taille du logo
 .logo {
   width: v-bind(width);
   height: v-bind(height);
@@ -45,6 +49,11 @@
 </style>
 
 <script setup>
+// Mise en place de props pour paramétrer le logo :
+// color permet de choisir la couleur du logo
+// width permet de choisir la taille du logo
+// height permet de choisir la hauteur du logo
+// fontSize permet de choisir la taille de l'écriture du logo
 defineProps({
   color: String,
   width: String,

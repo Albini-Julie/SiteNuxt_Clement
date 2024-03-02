@@ -34,6 +34,7 @@
 </template>
 
 <script setup>
+// Création d'un props color permettant de rendre paramétrable la couleur de l'icon
 defineProps({
   color: String,
 });

@@ -1,4 +1,5 @@
 <template>
+  <!--Header-->
   <Header backColor="#FFF" color="#000" />
   <!-- Logos sponsors en grille -->
   <div class="sponsors__grid">
@@ -7,6 +8,7 @@
       v-for="sponsor in sponsors.data.sponsors_logos"
       :key="sponsor.id"
     >
+      <!--Logos des marques-->
       <img :src="sponsor.sponsors_logo.url" :alt="sponsor.sponsors_logo.alt" />
     </div>
   </div>
@@ -17,15 +19,19 @@
     }"
     class="sponsors__image"
   >
+    <!--Contenus textuels-->
     <div class="sponsors__sponsoring">
       <div class="sponsors__textes">
+        <!--Titre-->
         <h2 class="sponsors__title">
           {{ sponsors.data.confiance_titre[0].text }}
         </h2>
+        <!--Textes-->
         <p class="sponsors__text">
           {{ sponsors.data.confiance_texte[0].text }}
         </p>
       </div>
+      <!--Card sponsoring-->
       <Sponsoring
         class="sponsoring__card"
         :title="sponsors.data.sponsoring_titre[0].text"
@@ -35,6 +41,7 @@
       />
     </div>
   </div>
+  <!--Footer-->
   <Footer color="#FFF" colorText="#000" />
 </template>
 
@@ -65,7 +72,7 @@
     z-index: 1;
   }
   &__sponsoring {
-    position: relative; /* Assurez-vous que la position est relative pour que les éléments absolus à l'intérieur soient positionnés correctement */
+    position: relative;
     z-index: 50;
     padding-left: rem(30);
     padding-right: rem(30);
@@ -128,12 +135,14 @@
 </style>
 
 <script setup>
+// Appel du client usePrismic pour avoir accès aux données de la single page sponsors
 const { client } = usePrismic();
 const { data: sponsors, error } = await useAsyncData("sponsors", () =>
   client.getSingle("sponsors")
 );
 console.log(sponsors);
 
+// Mise en place du SEO
 useSeoMeta({
   title: "calb-motorsport sponsors",
   ogTitle: "calb-motorsport sponsors",

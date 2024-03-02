@@ -1,8 +1,11 @@
 <template>
   <!--Partie sponsoring-->
   <div class="sponsoring">
+    <!--Titre-->
     <h2 class="sponsoring__title">{{ title }}</h2>
+    <!--Textes-->
     <p class="sponsoring__text">{{ text }}</p>
+    <!--Bouton-->
     <div class="sponsoring__button">
       <Button color="#FFFFFF" colorText="#000000" :text="button" :lien="lien" />
     </div>
@@ -87,6 +90,11 @@
 </style>
 
 <script setup>
+// Création de props pour rendre paramétrable la card
+// title permet de choisir le texte afficher en titre
+// text permet de choisir le texte afficher en texte
+// button permet de choisir le texte afficher en bouton
+// lien permet de choisir le chemin vers lequel renvoie le bouton
 defineProps({
   title: String,
   text: String,

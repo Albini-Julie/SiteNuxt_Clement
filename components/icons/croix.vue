@@ -14,6 +14,7 @@
 </template>
 
 <script setup>
+// Mise en place d'une props color qui paramètre la couleur de l'icon
 defineProps({
   color: String,
 });

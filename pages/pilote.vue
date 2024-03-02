@@ -1,8 +1,10 @@
 <template>
+  <!--Header-->
   <Header backColor="#BA0000" color="#FFFFFF" />
   <div class="pilote">
     <!--Présentation-->
     <div class="pilote__presentation">
+      <!--Images-->
       <div class="presentation__images">
         <img
           class="presentation__image"
@@ -15,6 +17,7 @@
           :alt="pilote.data.presentation_image1.alt"
         />
       </div>
+      <!--Contenus textuels-->
       <div class="presentation__content">
         <h2 class="presentation__title">
           {{ pilote.data.presentation_titre[0].text }}
@@ -26,6 +29,7 @@
     </div>
     <!--Qualités-->
     <div class="pilote__qualites">
+      <!--Image-->
       <div class="qualites__blocImage">
         <img
           class="qualites__image"
@@ -33,6 +37,7 @@
           :alt="pilote.data.qualite_image.alt"
         />
       </div>
+      <!--Contenus textuels-->
       <div class="qualites__blocContent">
         <div
           class="qualites__content"
@@ -63,6 +68,7 @@
             <p class="projets__text">{{ i.projet_texte[0].text }}</p>
           </div>
         </div>
+        <!--Card sponsoring-->
         <Sponsoring
           :title="pilote.data.sponsoring_titre[0].text"
           :text="pilote.data.sponsoring_texte[0].text"
@@ -72,6 +78,7 @@
       </div>
     </div>
   </div>
+  <!--Footer-->
   <Footer color="#FFFFFF" colorText="#000000" />
 </template>
 
@@ -326,12 +333,14 @@
 </style>
 
 <script setup>
+// Appel du client usePrismic ppur avoir accès aux données de la single page pilote
 const { client } = usePrismic();
 const { data: pilote, error } = await useAsyncData("pilote", () =>
   client.getSingle("pilote")
 );
 console.log(pilote);
 
+// Mise en place du SEO
 useSeoMeta({
   title: "calb-motorsport pilote",
   ogTitle: "calb-motorsport pilote",
