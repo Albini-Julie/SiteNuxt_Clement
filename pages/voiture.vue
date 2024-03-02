@@ -289,4 +289,17 @@ const { data: voiture, error } = await useAsyncData("voiture", () =>
   client.getSingle("voiture")
 );
 console.log(voiture);
+
+useSeoMeta({
+  title: "calb-motorsport voiture",
+  ogTitle: "calb-motorsport voiture",
+  description:
+    "Le site de Clément Albini dédié au rallye calb-motorsport. Découvrez le pilote, sa voiture, sa passion du rallye et de l'automobile. Interessez-vous à la voiture automobile de rallye de Clement Albini, son constituion, l'explication de son choix et des photos inédites.",
+  ogDescription:
+    "Le site de Clément Albini dédié au rallye calb-motorsport. Découvrez le pilote, sa voiture, sa passion du rallye et de l'automobile. Interessez-vous à la voiture automobile de rallye de Clement Albini, son constitution, l'explication de son choix et des photos inédites.",
+  ogImage: "/logo_calb-motorsport.jpg",
+  twitterCard: "summary_large_image",
+  keywords:
+    "rallye, voiture, albini, franche-comté, rallye-automobile, automobile, sponsors, WRC, mécanique, photos, choix",
+});
 </script>

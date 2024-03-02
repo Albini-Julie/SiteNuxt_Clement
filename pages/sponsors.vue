@@ -133,4 +133,17 @@ const { data: sponsors, error } = await useAsyncData("sponsors", () =>
   client.getSingle("sponsors")
 );
 console.log(sponsors);
+
+useSeoMeta({
+  title: "calb-motorsport sponsors",
+  ogTitle: "calb-motorsport sponsors",
+  description:
+    "Le site de Clément Albini dédié au rallye calb-motorsport. Découvrez le pilote, sa voiture, sa passion du rallye et de l'automobile. Les entreprises qui ont fait confiance à Clément Albini et qui ont choisi de le soutenir dans son rêve.",
+  ogDescription:
+    "Le site de Clément Albini dédié au rallye calb-motorsport. Découvrez le pilote, sa voiture, sa passion du rallye et de l'automobile. Les entreprises qui ont fait confiance à Clément Albini et qui ont choisi de le soutenir dans son rêve.",
+  ogImage: "/logo_calb-motorsport.jpg",
+  twitterCard: "summary_large_image",
+  keywords:
+    "rallye, voiture, albini, franche-comté, rallye-automobile, automobile, sponsors, WRC, mécanique, sponsors, entreprises, argent, soutien, rêve, dons, aide financière, sponsoring",
+});
 </script>
