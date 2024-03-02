@@ -176,6 +176,19 @@ const { data: accueil, error } = await useAsyncData("accueil", () =>
   client.getSingle("pageaccueil")
 );
 console.log(accueil);
+
+useSeoMeta({
+  title: "calb-motorsport",
+  ogTitle: "calb-motorsport",
+  description:
+    "Le site de Clément Albini dédié au rallye calb-motorsport. Découvrez le pilote, sa voiture, sa passion du rallye et de l'automobile.",
+  ogDescription:
+    "Le site de Clément Albini dédié au rallye calb-motorsport. Découvrez le pilote, sa voiture, sa passion du rallye et de l'automobile.",
+  ogImage: "/logo_calb-motorsport.jpg",
+  twitterCard: "summary_large_image",
+  keywords:
+    "rallye, voiture, albini, franche-comté, rallye-automobile, automobile, sponsors, WRC, mécanique",
+});
 </script>
 
 <style lang="scss" scoped>

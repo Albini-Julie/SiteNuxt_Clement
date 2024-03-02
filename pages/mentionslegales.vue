@@ -80,4 +80,17 @@ const { data: legales, error } = await useAsyncData("legales", () =>
   client.getSingle("mentions_le")
 );
 console.log(legales);
+
+useSeoMeta({
+  title: "calb-motorsport mentions légales",
+  ogTitle: "calb-motorsport mentions légales",
+  description:
+    "Le site de Clément Albini dédié au rallye calb-motorsport. Découvrez le pilote, sa voiture, sa passion du rallye et de l'automobile. Lisez l'aspect légal du site web avec les conditions générales.",
+  ogDescription:
+    "Le site de Clément Albini dédié au rallye calb-motorsport. Découvrez le pilote, sa voiture, sa passion du rallye et de l'automobile. Lisez l'aspect légal du site web avec les conditions générales.",
+  ogImage: "/logo_calb-motorsport.jpg",
+  twitterCard: "summary_large_image",
+  keywords:
+    "rallye, voiture, albini, franche-comté, rallye-automobile, automobile, sponsors, WRC, mécanique, mentions légales, conditions générales, légal",
+});
 </script>

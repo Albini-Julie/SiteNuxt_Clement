@@ -222,4 +222,17 @@ const { data: contact, error } = await useAsyncData("contact", () =>
   client.getSingle("contact")
 );
 console.log(contact);
+
+useSeoMeta({
+  title: "calb-motorsport contact",
+  ogTitle: "calb-motorsport contact",
+  description:
+    "Prendre contact avec Clément Albini sur le site dédié au rallye calb-motorsport",
+  ogDescription:
+    "Prendre contact avec Clément Albini sur le site dédié au rallye calb-motorsport",
+  ogImage: "/logo_calb-motorsport.jpg",
+  twitterCard: "summary_large_image",
+  keywords:
+    "rallye, voiture, contact, albini, franche-comté, rallye-automobile, automobile, sponsors, WRC",
+});
 </script>
